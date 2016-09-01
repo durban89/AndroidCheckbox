@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             CheckBox checkBox = (CheckBox) getLayoutInflater().inflate(R.layout.check_box, null);
             checkBoxs.add(checkBox);
             checkBoxs.get(i).setText(checkBoxText[i]);
-            linearLayout.addView(checkBox);
+            linearLayout.addView(checkBox, i);
         }
 
         setContentView(linearLayout);
@@ -52,6 +52,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             s = "还没有选中选项！";
         }
 
-        new AlertDialog.Builder(this).setMessage(s).setPositiveButton("关闭", null);
+        new AlertDialog.Builder(this).setMessage(s).setPositiveButton("关闭", null).show();
     }
 }
